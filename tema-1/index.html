@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Tema 1</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/comillas-logo.png" width="50%" />
+					<p>
+						Programación de Aplicaciones Telemáticas
+					</p>
+				</section>
+				<section>
+					<h2>Tema 1: La web en la industria</h2>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>Ciclo de vida del software</li>
+						<li>Paradigmas de programación</li>
+						<li>Sistemas distribuidos</li>
+						<li>Ecosistema Frontend</li>
+						<li>Ecosistema Backend</li>
+						<li>Arquitecturas de software</li>
+						<li>Tendencias</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Ciclo de vida del software</h2>
+					<img src="images/SDLC-stages.png" width="50%" />
+				</section>
+				<section>
+					<!--
+					https://es.wikipedia.org/wiki/Programaci%C3%B3n_estructurada
+					https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n#Clasificaci%C3%B3n_por_paradigmas
+					https://github.com/ReactiveX/RxJava/wiki/Problem-Solving-Examples-in-RxJava
+					https://github.com/ReactiveX/RxJava/wiki/Problem-Solving-Examples-in-RxJava
+					-->
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<ul>
+							<li>Estructurada</li>
+							<li>Imperativa</li>
+							<li>Orientada a Objetos</li>
+							<li>Declarativa</li>
+							<li>Funcional</li>
+							<li>Reactiva</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<p>
+							<strong>La programación estructurada</strong> es un paradigma de programación orientado a mejorar la claridad, calidad y tiempo de desarrollo de un programa de computadora recurriendo únicamente a subrutinas y tres estructuras básicas: secuencia, selección (if y switch) e iteración (bucles for y while); asimismo, se considera innecesario y contraproducente el uso de la instrucción de transferencia incondicional (GOTO)
+						</p>
+					</section>
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<p>
+							<strong>La programación imperativa</strong> (del latín imperare = ordenar) es el paradigma de programación más antiguo. De acuerdo con este paradigma, un programa consiste en una secuencia claramente definida de instrucciones para un ordenador.
+						</p>
+					</section>
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<pre><code data-trim>
+int sum = 0;
+
+for (int counter = 1; counter < limit; counter++) {
+	if ((counter % THREE == 0) || (counter % FIVE == 0)) {
+		sum += counter;
+	}
+}
+
+return sum;
+						</code></pre>
+					</section>
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<p>
+							<strong>La programacion Declarativa:</strong> que está basado en el desarrollo de programas especificando o "declarando" un conjunto de condiciones, proposiciones, afirmaciones, restricciones, ecuaciones o transformaciones que describen el problema y detallan su solución.
+						</p>
+					</section>
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<p>
+							<strong>La Programación Orientada a Objetos</strong> (POO, en español; OOP, según sus siglas en inglés) es un paradigma de programación que viene a innovar la forma de obtener resultados. Los objetos se utilizan como metáfora para emular las entidades reales del negocio a modelar.
+						</p>
+					</section>
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<p>
+							<strong>La programación funcional</strong> es un paradigma de programación declarativa basado en el uso de verdaderas funciones matemáticas. En este estilo de programación las funciones son ciudadanas de primera clase, porque sus expresiones pueden ser asignadas a variables como se haría con cualquier otro valor; además de que pueden crearse funciones de orden superior
+						</p>
+					</section>
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<pre><code data-trim>
+BiPredicate<Integer, Integer> isMultiple = (l, i) -> l % i == 0;
+Predicate<Integer> isMultiple3 = number -> isMultiple.test(number, THREE);
+Predicate<Integer> isMultiple5 = number -> isMultiple.test(number, FIVE);
+
+return IntStream.range(1, limit).boxed()
+		.filter(isMultiple3.or(isMultiple5))
+		.reduce(0, Integer::sum);
+
+						</code></pre>
+					</section>
+					<section>
+						<p>
+							<strong>Programación reactiva</strong> es un paradigma basado en la declaración de una serie de objetos emisores de eventos asíncronos y otra serie de objetos que se "suscriben" a los primeros (es decir, quedan a la escucha de la emisión de eventos de estos) y *reaccionan* a los valores que reciben.
+						</p>
+					</section>
+					<section>
+						<h2>Paradigmas de programación</h2>
+						<pre><code data-trim>
+Observable< Integer> threes = Observable.range(1, 999)
+	.map(e -> e * 3).takeWhile(e -> e < 1000);
+Observable< Integer> fives = Observable.range(1, 999)
+	.map(e -> e * 5).takeWhile(e -> e < 1000);
+Observable< Integer> threesAndFives = Observable
+	.merge(threes, fives).distinct();
+Single< Integer> summer = threesAndFives
+	.reduce(0, (a, b) -> a + b);
+summer.subscribe(System.out::print);
+
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>Sistemas distribuidos</h2>
+					<p>
+						Un sistema distribuido es un sistema cuyos componentes están ubicados
+						en diferentes computadoras en red, que se comunican y coordinan sus acciones pasándose
+						mensajes entre sí. Los componentes interactúan entre sí para lograr un objetivo común.
+					</p>
+					<p>
+						Source: <a href="https://en.wikipedia.org/wiki/Distributed_computing" target="_blank">Wikipedia</a>
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>Ecosistema Frontend</h2>
+						<p>
+							En el desarrollo de software, el Frontend es la parte del software que interactúa
+							con los usuarios a través del navegador web y
+							las tecnologias web como son HTML, CSS y Javascript.
+						</p>
+						<p>
+							Interface de usuario web, recibe los datos del usuario y los enviará al Backend
+							para su procesamiento.
+						</p>
+					</section>
+					<section>
+						<h2>Ecosistema Frontend</h2>
+						<p>
+							El desarrollo en Frontend tiene que tener en cuenta los siguientes conceptos:
+						</p>
+						<ul>
+							<li>Interface de usuario</li>
+							<li>Accesibilidad</li>
+							<li>Look & Feel</li>
+							<li>Interacción</li>
+						</ul>
+						<!--
+Vanilla JS
+Angular
+React
+Vue.js
+						-->
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h2>Ecosistema Backend</h2>
+						<p>
+							El Backend se encarga de recibir la información del usuario y procesarla.
+							Pueden existir los siguientes modelos de interacción:
+						</p>
+						<ul>
+							<li>request/response</li>
+							<li>fire-and-forget</li>
+							<li>request/stream</li>
+							<li>channel</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ecosistema Backend</h2>
+						<p>
+							En el desarrollo del Backend,
+							se desarrollan endpoints para procesar la informacion y se interacciona
+							con distintos elementos como:
+						</p>
+						<ul>
+							<li>REST APIs</li>
+							<li>XML Web Services</li>
+							<li>Bases de datos</li>
+							<li>Caches</li>
+							<li>Brokers de mensajeria</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ecosistema Backend</h2>
+						<p>
+							No todo el desarrollo de Backend se desarrolla
+							en Java en el lado del Backend o en Javascript en el lado del cliente.
+							Existen más opciones:
+						</p>
+						<ul>
+							<li>Scala</li>
+							<li>Kotlin</li>
+							<li>Go</li>
+							<li>Rust</li>
+							<li>Typescript</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Arquitecturas de Software</h2>
+						<p>
+							Dependiendo del escenario de uso del Backend, podrias elegir entre:
+						</p>
+						<ul>
+							<li>Desarrollo síncrono REST</li>
+							<li>Desarrollo asíncrono REST</li>
+							<li>Desarrollo event-driven</li>
+							<li>Serverless</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Arquitecturas REST</h2>
+						<p>
+							REST es una arquitectura de desarrollo web que puede ser utilizada en cualquier cliente HTTP.
+						</p>
+						<ul>
+							<li>Es un protocolo sin estado</li>
+							<li>Las operaciones se definen a traves de los metodos: GET, POST, PUT, PATCH y DELETE</li>
+							<li>Utiliza URIs</li>
+							<li>Emplea hipermedia (HTML, XML & JSON)</li>
+						</ul>
+						<!--
+                        Comunicación síncrona
+                        Client-Servidor
+                        -->
+					</section>
+					<section>
+						<h2>Arquitectuas Event-driven</h2>
+						<!-- Comunicacion asincrona -->
+						<p>
+							La Event-Driven Architecture (EDA, por sus siglas en inglés) es una arquitectura
+							en la que el software ejecuta una acción al recibir una o más notificaciones de eventos.
+						</p>
+						<img src="images/event-driven.png" />
+					</section>
+					<section>
+						<h2>Arquitectuas Event-driven</h2>
+						<h3>Componentes:</h3>
+						<ul>
+							<li>Message broker</li>
+							<li>Publisher/Subscriber</li>
+							<li>Message</li>
+							<li>Channels</li>
+						</ul>
+						<!--
+                        https://www.asyncapi.com/
+                        -->
+					</section>
+					<section>
+						<h2>Arquitecturas Serverless</h2>
+						<p>
+							Las Arquitecturas Serverless se caracterizan por la capacidad de computación efímera
+							en infraestructura manejada por proveedores cloud tipo AWS, Azure o Google Cloud.
+						</p>
+					</section>
+				</section>
+				<!--
+				https://www.infoq.com/search.action?queryString=trends&page=1&searchOrder=
+				https://www.infoq.com/articles/javascript-web-development-trends-2020/
+				https://www.infoq.com/articles/java-jvm-trends-2020/
+				https://www.infoq.com/articles/architecture-trends-2020/
+				-->
+				<section>
+					<section>
+						<h2>Tendencias</h2>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

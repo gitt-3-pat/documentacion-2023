@@ -1,0 +1,440 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Tema 3</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/comillas-logo.png" width="50%" />
+					<p>
+						Programación de Aplicaciones Telemáticas
+					</p>
+				</section>
+				<section>
+					<h2>Tema 3: HTML</h2>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>Introducción</li>
+						<li>¿Que es un documento web?</li>
+						<li>HTML</li>
+						<li>Estructura de un documento web</li>
+						<li>Contenido</li>
+						<li>Navegación</li>
+						<li>Layout</li>
+						<li>Interacción</li>
+						<li>Seguridad</li>
+						<li>Referencias</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Introducción</h2>
+						<p>
+							La web permite interaccionar con Humanos y Máquinas a través del protocolo HTTP.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>¿Que es un documento web?</h2>
+						<p>
+							Los documentos web componen la unidad minima de información que permite intercambiar
+							un Servidor Web con un Cliente Web a través de una petición Http.
+						</p>
+						<p>
+							Un documento web se compone de:
+						</p>
+						<ul>
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>Javascript</li>
+						</ul>
+					</section>
+					<section>
+						<h2>¿Que es un documento web?</h2>
+						<p>
+							Un documento tambien puede incluir:
+						</p>
+						<ul>
+							<li>Imágenes</li>
+							<li>Vídeo</li>
+							<li>Objetos hipermedia incluidos (PDF, otros...)</li>
+						</ul>
+					</section>
+				</section>
+				<!-- Primera hora -->
+				<section>
+					<section>
+						<h2>HTML</h2>
+						<p>
+							Hypertext Markup Language (HTML) es el lenguaje estándar basado en etiquetas (markup) para navegadores Web.
+							Se complementa con tecnologias como Cascading Style Sheets (CSS) y lenguaje de scripting como Javascript.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Estructura de un documento web</h2>
+						<ul>
+							<li>Doctype</li>
+							<li>Head</li>
+							<li>Body</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Doctype</h2>
+						<p>
+							Todos los documentos web, deben empezar con una declaración < !DOCTYPE>
+						</p>
+						<p>
+							Indica con que tipo version de documento HTML debe ser parseada.
+						</p>
+					</section>
+					<section>
+						<h2>Head</h2>
+						<p>
+							La etiqueta HTML < head > contiene la información del servidor (metadata) sobre el documento, como "title", "scripts" y "styles".
+						</p>
+					</section>
+					<section>
+						<h2>Head</h2>
+						<p>
+							Example: view-source:https://as.com/
+						</p>
+
+					</section>
+					<section>
+						<pre><code data-trim>
+<head class="WPO-PORTADA">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>AS.com - Diario online deportivo. Fútbol, motor y mucho más</title>
+<meta http-equiv="Refresh" content="900000; url=//as.com/?omnaut=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="Description" content="Últimas noticias de deportes en el principal diario deportivo en español.  Noticias y vídeos de fútbol, baloncesto, fórmula 1, retransmisiones en directo, crónicas y estadísticas con AS.com" />
+
+<style type="text/css"></style>
+<script language="javaScript" type="text/javascript"></script>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Body</h2>
+						<p>
+							La etiqueta HTML < body > representa el contenido del documento HTML.
+							Sólo puede existir una etiqueta < body > en un documento (page).
+						</p>
+					</section>
+					<section>
+						<h2>Body</h2>
+						<pre><code data-trim>
+							<body>
+							  <h1>This is a heading</h1>
+							  <p>This is a paragraph.</p>
+							</body>
+						</code>
+					</pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Contenido</h2>
+						<p>
+							En un documento web se pueden añadir:
+						</p>
+						<ul>
+							<li>Títulos</li>
+							<li>Párrafos</li>
+							<li>Tablas</li>
+							<li>Multimedia</li>
+							<li>Formularios Web</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Contenido</h2>
+						<h3>Títulos</h3>
+						<pre><code data-trim>
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<h4>Header 4</h4>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Contenido</h2>
+						<h3>Parrafos</h3>
+						<pre><code data-trim>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Maecenas viverra turpis id pharetra accumsan.
+Praesent et nibh non purus ultrices gravida sed id ligula.
+Curabitur luctus, erat non rutrum accumsan, nibh nisi tempor odio,
+finibus ultrices quam lectus ut elit. Donec molestie euismod nulla ut fermentum.
+</p>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Contenido</h2>
+						<h3>Tablas</h3>
+						<pre><code data-trim>
+<table>
+	<thead>
+		<tr>
+			<th>Columna 1</th>
+			<th>Columna 2</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Valor 1</td>
+			<td>Valor 2</td>
+		</tr>
+	</tbody>
+</table>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Contenido</h2>
+						<h3>Multimedia</h3>
+						<pre><code data-trim>
+<img src="url" width="50%" height="50%" />
+						</code></pre>
+					</section>
+					<section>
+						<h3>Formularios</h3>
+						<p>
+							Los formularios web permiten interaccionar con el lado del servidor para enviar informacion.
+						</p>
+					</section>
+					<section>
+						<h3>Formularios</h3>
+						<pre><code data-trim>
+<form action="/signup" method="post">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"/><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"/><br><br>
+  <label for="tidentification">Type identification:</label>
+  <select name="select">
+    <option value="value1">NIF</option>
+    <option value="value2" selected>DNI</option>
+    <option value="value3">NIE</option>
+  </select><br><br>
+   <label for="identification">Identification:</label>
+  <input type="text" id="identification" name="identification"/><br><br>
+  <button type="submit">Submit</button>
+</form>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Formularios</h2>
+						<img src="images/formulario1.png" width="130%"/>
+					</section>
+					<section>
+						<h2>Contenido</h2>
+						<h3>Elementos de formulario:</h3>
+						<ul>
+							<li>form</li>
+							<li>button</li>
+							<li>input</li>
+							<li>select</li>
+							<li>option</li>
+							<li>textarea</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Contenido</h2>
+						<h3>Validación de formularios</h3>
+						<pre><code data-trim>
+<form action="/your_backend_url" method="post"
+	  enctype="application/x-www-form-urlencoded">
+<label for="fname">First name:</label><br />
+<input required="required" placeholder="Enter your name"
+	   type="text" id="fname" name="name" /><br />
+<input type="submit" value="Submit">
+</form>
+						</code></pre>
+					</section>
+					<section>
+						<img src="images/example.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Navegacion</h2>
+						<p>
+							The HTML < a> tag defines a hyperlink.
+						</p>
+						<pre><code data-trim>
+<a href="url">link text</a>
+					</code></pre>
+					</section>
+					<section>
+						<img src="images/example.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Layout</h2>
+						<ul>
+							<li>< header > - Defines a header for a document or a section</li>
+							<li>< nav > - Defines a set of navigation links</li>
+							<li>< section > - Defines a section in a document</li>
+							<li>< article > - Defines an independent, self-contained content</li>
+							<li>< aside > - Defines content aside from the content (like a sidebar)</li>
+							<li>< footer > - Defines a footer for a document or a section</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Layout</h2>
+						<img src="images/html-layout-elements.png" />
+					</section>
+					<section>
+						<h2>Layout techniques</h2>
+						<ul>
+							<li>CSS float property</li>
+							<li>CSS flexbox</li>
+							<li>CSS grid</li>
+						</ul>
+						<p>
+							Otros tipos: Iframes
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Interación</h2>
+						<p>
+							Web forms are one of the main points of interaction between
+							a user and a web site or application.
+							Forms allow users to enter data, which is generally sent to a web server
+							for processing and storage (see Sending form data later in the module),
+							or used on the client-side to immediately update the interface in some way
+							(for example, add another item to a list, or show or hide a UI feature).
+						</p>
+					</section>
+					<section>
+						<h2>Interación</h2>
+						<img src="images/form-sketch.jpg" />
+					</section>
+					<section>
+						<h2>Interación</h2>
+						<pre><code data-trim>
+<form action="/my-handling-form-page" method="post">
+
+</form>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Interación</h2>
+						<pre><code data-trim>
+<form action="/my-handling-form-page" method="post">
+ <ul>
+  <li>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user_name">
+  </li>
+  <li>
+    <label for="mail">E-mail:</label>
+    <input type="email" id="mail" name="user_email">
+  </li>
+  <li>
+    <label for="msg">Message:</label>
+    <textarea id="msg" name="user_message"></textarea>
+  </li>
+ </ul>
+</form>
+						</code></pre>
+					</section>
+					<section>
+						<img src="images/example.png" />
+					</section>
+				</section>
+				<!--
+				https://owasp.org/www-community/xss-filter-evasion-cheatsheet
+				https://html5sec.org/
+				https://snyk.io/learn/javascript-security/
+				https://www.ostraining.com/blog/webdesign/against-using-iframes/
+				https://www.honeybadger.io/blog/link-vulnerabilities/
+				-->
+				<section>
+					<section>
+						<h2>Seguridad</h2>
+						<h3>HTML</h3>
+						<ul>
+							<li>XSS: Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. </li>
+							<li>HTML comment parsing issues: This vector shows how comments are being parsed and what problems can arise in case user submitted HTML is allowed to contain comments.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Seguridad</h2>
+						<h3>HTML</h3>
+						<ul>
+							<li>Iframes: Google Chrome implements the HTML5 "sandboxed iframes". This particular example shows on how to turn this feature against websites only using JavaScript based frame-busters. Note that the framed website can still execute JavaScript - but has no privileges to modify the top frame's location. This would only be possible if the sandbox attribute also came with the "allow-top-navigation" parameter.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Seguridad</h2>
+						<h3>HTML</h3>
+						<ul>
+							<li>Link hijacking: Broken Link Hijacking (BLH) exists whenever a target links to an expired domain or page.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Referencias</h2>
+						<ul>
+							<li>https://developer.mozilla.org/en-US/docs/Web/HTML</li>
+							<li>https://www.w3schools.com/html/html_layout.asp</li>
+							<li>https://www.w3schools.com/html/html_forms.asp</li>
+							<li>https://html5sec.org/</li>
+							<li>https://owasp.org/www-community/attacks/xss/</li>
+							<li>https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server</li>
+						</ul>
+					</section>
+					<section>
+						<img src="images/html-book.jpg" />
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+			Reveal.configure(
+				{ showNotes: true },
+				{ showNotes: 'separate-page' },
+				{ pdfMaxPagesPerSlide: 1 }
+			);
+		</script>
+	</body>
+</html>

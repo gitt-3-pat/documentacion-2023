@@ -1,0 +1,851 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Tema 5</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/comillas-logo.png" width="50%" />
+					<p>
+						Programación de Aplicaciones Telemáticas
+					</p>
+				</section>
+				<section>
+					<h2>Tema 5: Javascript</h2>
+					<img src="images/javascript-logo.png" width="30%" />
+				</section>
+				<section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>Introducción</li>
+							<li>Core Language</li>
+							<li>Javascript & Web Browser</li>
+							<li>Formularios Web</li>
+							<li>Referencias</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Sesión 1: Javascript Core</h2>
+				</section>
+				<!--
+				https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics
+				-->
+				<section>
+					<section>
+						<h2>Introducción</h2>
+						<ul>
+							<li>JavaScript (JS) es un lenguaje de programación ligero, interpretado, o compilado justo-a-tiempo (just-in-time)</li>
+							<li>Es más conocido como un lenguaje de scripting</li>
+							<li>JavaScript es un lenguaje de programación basada en prototipos</li>
+							<li>Utilizado no solo en Navegadores Web (Por ejemplo NodeJS)</li>
+						</ul>
+					</section>
+					<!--
+					https://www.educba.com/uses-of-javascript/
+					-->
+					<!--
+						https://developer.mozilla.org/es/docs/Web/JavaScript
+					-->
+					<section>
+						<h2>Introducción</h2>
+						<ul>
+							<li>No confundir JavaScript con el lenguaje de programación Java</li>
+							<li>Ambos lenguajes de programación tienen sintaxis, semántica y usos muy diferentes</li>
+							<li>Multiparadigma, de un solo hilo, dinámico, con soporte para programación orientada a objetos, imperativa y declarativa (por ejemplo programación funcional)</li>
+
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Core Language</h2>
+						<ul>
+							<li>Incorporar JS en nuestra Web</li>
+							<li>¿Para qué sirve?</li>
+							<li>Ejecutar código Javascript</li>
+							<li>Tipos</li>
+							<li>Sintaxis</li>
+							<li>Documentación</li>
+						</ul>	
+					</section>
+					<section>
+						<h2>Incorporar JS en nuestra Web</h2>
+						<pre><code data-trim>
+<script type="text/javascript" src="fichero.js"></script>
+						</code></pre>
+					</section>
+					<section>
+							<h2>Incorporar JS en nuestra Web</h2>
+							<pre><code data-trim>
+		<script>
+	document.getElementById("demo").innerHTML = "Hello JavaScript!";
+		</script>
+							</code></pre>
+					</section>
+<section>
+							<h2>Incorporar JS en nuestra Web</h2>
+							<pre><code data-trim>
+		<input type="button" value="clickMe" onclick='alert("Esto es una prueba");'>
+							</code></pre>
+					</section>
+					<section>
+						<h2>¿Para qué sirve?</h2>
+						<ul>
+							<li>Interactividad a nuestra Web</li>
+							<li>Acceder a información en Internet (APIs)</li>
+							<li>Organizar y presentar datos</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ejecutar código Javascript</h2>
+						<h3>HTML</h3>
+						<pre><code data-trim>
+							document.write("<p> Esto es un parrafo</p>");
+						</code></pre>
+					</section>
+					<section>
+						<h2>Ejecutar código Javascript</h2>
+						<h3>Reaccionar a eventos</h3>
+						<pre><code data-trim>
+							<button type="button" onclick="alert('Hello!')">Click Me!</button>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Ejecutar código Javascript</h2>
+						<h3>Modificar contenido HTML</h3>
+						<pre><code data-trim>
+							x=document.getElementById("demo");
+							x.innerHTML="Hello!";
+						</code></pre>
+					</section>
+					<section>
+						<h2>Ejecutar código Javascript</h2>
+						<h3>Validar información</h3>
+						<pre><code data-trim>
+							if isNaN(x) {alert("Error!")};
+						</code></pre>
+					</section>
+					<section>
+						<h2>Ejecutar código Javascript</h2>
+						<h3>Resumen</h3>
+						<ul>
+							<li>Mostrar información (Alert)</li>
+							<li>Cambiar información HTML (write)</li>
+							<li>Elementos HTML (innerHTML)</li>
+							<li>Consola del Navegador (console.log)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tipos</h2>
+						<ul>
+							<li>Primitivos</li>
+							<li>Objectos</li>
+							<li>Arrays</li>
+							<li>Funciones</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tipos (Primitivos)</h2>
+						<pre><code>
+const booleano = true && !false || true;
+const numero = 10 + 2 * 2 / 4 - 1;
+const cadena = 'Cadena con \' (comilla simple escapada)';
+const cadenaConVariables = `Núm:${numero}, Booleano:${booleano}, Cadena:'${cadena}'`;
+
+// Comentario: ¡pinta por consola para depurar!
+console.log(cadenaConVariables);
+						</code></pre>
+					</section>
+					<section>
+						<h2>Tipos (Objectos)</h2>
+						<pre><code>
+const objeto = {
+  campoNumero: 1.5,
+  campoBooleano: false,
+  campoObjeto: {
+    campoCadena: 'Cadena',
+    campoArray: [],
+    otroObjeto: {}
+  }
+};
+objeto.campoNumero += 2.5;
+
+console.log('Campo modificado:', objeto['campoNumero']);
+console.log('Campo anidado:', objeto.campoObjeto.campoCadena);
+console.log('Contenido de todo el objeto:', objeto);
+						</code></pre>
+					</section>
+					<section>
+						<h2>Tipos (Array)</h2>
+						<pre><code>
+
+const array = [1.2, true, {campo: 'a'}, [1, 2]];
+array[0] = '1er elemento modificado';
+array.push('elemento nuevo añadido al final');
+
+console.log('Longitud del array:', array.length);
+console.log('Contenido de todo el array:', array);
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Tipos (Funciones)</h2>
+						<ul>
+							<li><b>function: </b>Declara una función con los parámetros especificados</li>
+							<li><b>function*: </b>Los generadores de funciones permiten escribir iteradores con mas facilidad</li>
+							<li><b>async function: </b>Declara una función asíncrona con los parámetros especificados</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tipos (Funciones)</h2>
+						<ul>
+							<li><b>return: </b>Especifica el valor a ser retornado por una función</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tipos (Funciones)</h2>
+						<pre><code>
+const suma = function suma(param1, param2) {
+    return param1 + param2;
+};
+console.log(suma(1, 2));
+						</code></pre>
+					</section>
+					<section>
+						<h2>Sintaxis</h2>
+						<ul>
+							<li>Variables</li>
+							<li>Condicionales</li>
+							<li>Igualdad</li>
+							<li>Bucles</li>
+							<li>Excepciones</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sintaxis (Variables)</h2>
+						<p>
+							Variables son contenedores que almacenan valores (Objetos)
+						</p>
+						<ul>
+							<li>var</li>
+							<li>let</li>
+							<li>const</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sintaxis (Variables)</h2>
+						<img src="images/VariablesJS.png" width="100%" />
+					</section>
+					<section>
+						<h2>Sintaxis (Condicionales)</h2>
+						<pre><code>
+const condicion1 = false;
+const condicion2 = true;
+if (condicion1 && condicion2) {
+  console.log('Entro por if');
+} else if (condicion1 || !condicion2) {
+  console.log('Entro por else if');
+} else {
+  console.log('Entro por else');
+}
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Sintaxis (Condicionales)</h2>
+						<pre><code>
+const condicion = true;
+const resultado = condicion ? 1 : 2;
+						</code></pre>
+					</section>
+					<section>
+						<h2>Sintaxis (Comparadores)</h2>
+						<pre><code>
+const array = ['a'];
+console.log(1 === 1);
+console.log('cadena' === 'cadena');
+console.log(array === array);
+console.log(array !== ['a']);
+console.log('1' !== 1);
+console.log(true !== 1);
+console.log(false !== 0);
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Sintaxis (Comparadores)</h2>
+						<pre><code>
+const array = ['a'];
+console.log('1' == 1);
+console.log(true == 1);
+console.log(false == 0);
+console.log(array != ['a']);
+						</code></pre>
+					</section>
+					<section>
+						<h2>Sintaxis (Interaciones)</h2>
+						<ul>
+							<li><b>do...while: </b>Crea un bucle que ejecuta una instrucción especificada hasta que la condición de prueba se evalúa como falsa. La instrucción especificada se ejecute al menos una vez</li>
+							<li><b>for: </b> Crea un bucle que consiste en 3 parametros opciones, seguido del bloque a ejecutar en cada iteración</li>
+							<li><b>for each...in: </b>Itera una variable especificada sobre todos los valores de las propiedades del objeto</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sintaxis (Interaciones)</h2>
+						<ul>
+							<li><b>for...in: </b>Itera sobre las propiedades enumerables de un objeto, en orden albitrario. Para cada propiedad distinta, las instrucciones pueden ser ejecutadas</li>
+							<li><b>for...of: </b>Ejecuta un bloque de código para cada elemento de un objeto iterable, como lo son: String, Array</li>
+							<li><b>while: </b>Crea un bucle que ejecuta la instrucción especificada siempre que la condición de prueba se evalúe como verdadera. La condición se evalúa antes de ejecutar la instrucción</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sintaxis (Excepciones)</h2>
+						<pre><code>
+const suma = function suma(a, b) {
+const resultado = a + b;
+if (!resultado && resultado !== 0) {
+    throw 'Parámetros incorrectos';
+}
+  return resultado;
+}
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Sintaxis (Excepciones)</h2>
+						<pre><code>
+const jsonAobjecto = function jsonAobjecto(json) {
+  try {
+    return JSON.parse(json);
+  } catch(error) {
+    console.log('Se ha producido al convertir de JSON ➜ objeto JS:', error);
+  }
+}
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Documentación</h2>
+						<p>
+https://developer.mozilla.org/es/docs/Web/JavaScript
+						</p>
+					</section>
+
+				</section>				
+				<section>
+					<h2>Sesión 2: Javascript & Web Browser</h2>
+				</section>
+				<section>
+					<section>
+						<h2>Javascript & Web Browser</h2>
+						<ul>
+							<li>The Window Object</li>
+							<li>Handling Events</li>
+							<li>Scripted HTTP</li>
+							<li>Client-Side Storage</li>
+							<li>HTML5 APIs</li>
+						</ul>
+					</section>
+					<section>
+						<h2>The Window Object (BOM & DOM)</h2>
+						<ul>
+							<li>Modelo de objetos que nos permite interactuar con el navegador y sus elementos</li>
+							<li>Soportado por todos los navegadores</li>
+							<li>Tenemos acceso a todos sus elementos y funciones</li>
+						</ul>
+					</section>
+					<section>
+						<h3>BOM (Browser Object Model)</h3>
+						<ul>
+							<li>Redimensionar ventanas del navegador</li>
+							<li>Obtener información del navegador (ventana actual):  propiedades, dimensión, histórico, URL actual...</li>
+							<li>Gestión de cookies</li>
+							<li>Acceder al DOM</li>
+							<li>Funciones con temporizador: <code style="font-size:0.7em">setTimeout(function(){}, timeoutMillis)</code> y  <code style="font-size:0.7em">setInterval(function(){}, intervalMillis)</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplos</h3>
+						<img src="images/bom.png" width="100%"/>
+					</section>
+					<section>
+						<h3>DOM (Document Object Model)</h3>
+						<ul>
+							<li>API para documentos HTML y XML</li>
+							<li>Estándar del W3C</li>
+							<li>Reprentación estructurada de los elementos del documento Web: elements HTML y nodes</li>
+							<li>Permite la comunicación de JavaScript con el document Web</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Acceso a elementos específicos</h3>
+						<ul>
+							<li><code>getElementById()</code></li>
+							<li><code>getElementsByName()</code></li>
+							<li><code>getElementsByTagName()</code></li>
+							<li><code>getElementsByClassName()</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Acceso a elementos específicos</h3>
+						<img src="images/dom1.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Creación de elementos y nodos</h3>
+						<ul>
+							<li><code>createElement(tag, options)</code></li>
+							<li><code>createComment(comment)</code></li>
+							<li><code>createText(text)</code></li>
+							<li><code>cloneDeep()</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Creación de elementos y nodos</h3>
+						<img src="images/dom2.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Insertar elementos</h3>
+						<ul>
+							<li><code>innerHTML, outerHTML</code></li>
+							<li><code>innerText, outerText</code></li>
+							<li><code>appendChild(element)</code></li>
+							<li><code style="font-size:0.8em">insertAdjacentElement(position,element)</code>,<code style="font-size:0.8em">insertAdjacentHTML(), insertAdjacentText()</code></li>
+							<li><code style="font-size:0.8em">remove()</code>,<code style="font-size:0.8em">removeChild(node), replaceChild(new, old)</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Insertar elementos</h3>
+						<img src="images/dom3.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Manipular clases CSS</h3>
+						<ul>
+							<li><code>className, getAttribute("class"), setAttribute("class", class)</code></li>
+							<li><code>classList</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Insertar elementos</h3>
+						<img src="images/dom4.png" width="100%"/>
+					</section>
+					<section>
+						<h2>Handling Events</h2>
+						<ul>
+							<li>Programación JavaScript reactiva basada en eventos</li>
+							<li>Se capturan los diferentes tipos de eventos en la página a través de <code>Event Listeners/Handlers</code></li>
+							<li>Estos listeners reciben el evento y realizan una acción</li>
+							<li>Un Handler/Listener por cada tipo de evento</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Handling Events</h2>
+						<h3>Tipos de eventos</h3>
+						<img src="images/js-events-common.png" width="60%"/>
+						<p>Referencia a <a href="https://developer.mozilla.org/en-US/docs/Web/Events#standard_events">todos los eventos</a></p>
+					</section>
+					<section>
+						<h2>Handling Events</h2>
+						<h3>Registro de Handlers</h3>
+						<p>Varias formas de registrar un Handler para un evento:</p>
+						<ul>
+							<li>A través de propiedad HTML: p.e. <code style="font-size:0.7em">&lt;button onclick="doSomething()"&gt;</code></li>
+							<li>A través del DOM estableciendo el atributo HTML: <code style="font-size:0.7em">document.getElementById("btn").onclick=doSomething</code></li>
+							<li>A través del DOM haciendo uso de <code style="font-size:0.7em">addEventListener(enventType,function(){})</code> y <code style="font-size:0.7em">removeEventListener(enventType,function(){})</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Handling Events</h2>
+						<h3>Objeto Event</h3>
+						<p>Cuando se desencadena un evento, en el Handler recibimos el objeto Evento asociado. A través de la propiedad <code>target</code> podemos acceder al elemento del DOM donde se produjo el evento</p>
+						<img src="images/event-object.png" width="100%"/>
+					</section>
+					<section>
+						<h2>Handling Events</h2>
+						<h3>Evitar el comportamiento por defecto</h3>
+						<p>Cuando hacemos un submit de un formulario, podemos romper el flujo y evitar el envío del mismo
+						Para ello utilizamos la función <code>preventDefault()</code> y en algunos casos, <code>return false</code></p>
+						<img src="images/prevent-default.png" width="80%"/>
+					</section>
+					<section>
+						<h3>Ejemplo búsqueda de películas con eventos</h3>
+						<img src="images/events-search.png" width="100%"/>
+					</section>
+					<section>
+						<h2>Scripted HTTP</h2>
+						<p>Consiste en la realización de peticiones HTTP a través de JavaScript</p>
+						<ul>
+							<li>A través del atributo <code>location</code> del <code>Window Object</code></li>
+							<li>A través de la función <code>submit()</code> para enviar formularios</li>
+							<li>A través de AJAX</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplos Scripted HTTP</h3>
+						<img src="images/scripted-http.png" width="100%"/>
+					</section>
+					<section>
+						<h2>Client-Side Storage</h2>
+						<p>Consiste en almacenar datos simples o complejos en la memoria del navegador para:</p>
+						<ul>
+							<li>Mejorar la experiencia de usuario, p.e. guardar preferencias, colores, gustos...</li>
+							<li>Almacenar datos de la sesión anterior, p.e. cesta de compra</li>
+							<li>Almacenar recursos/datos para que la carga de la página sea mucho más eficiente</li>
+							<li>Almacenar recursos/datos para poder utilizar el modo sin conexión</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Client-Side Storage</h2>
+						<ul>
+							<li>Cookies</li>
+							<li>Web Storage: local & session</li>
+							<li>IndexedDB</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Cookies</h3>
+						<ul>
+							<li>Es la forma clásica de almacenar datos sobre sesión de usuario, preferencias, etc.</li>
+							<li>Se almacenan en formato clave=valor</li>
+							<li>Se crean en servidor con la cabecera <code>Set-Cookie: &lt;nombre-cookie&gt;=&lt;valor-cookie&gt;</code></li>
+							<li>Se pueden crear con JavaScript a través del atributo <code>cookie</code> del <code>DOM</code></li>
+							<li>Asociadas a un dominio y un path, y se envían en todas las request contra ese dominio/path en la cabecera Cookie</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Cookies: atributos</h3>
+						<ul>
+							<li>Expires y Max-Age: sirven para establecer la caducidad de la cookie. Si no se establece, será una cookie de sesión</li>
+							<li>HttpOnly y Secure: sirven para evitar el acceso a la misma a través de JavaScript, y para solo enviarla en caso de ser una conexión HTTPS respectivamente</li>
+							<img src="images/cookies-chrome.png" width="100%"/>
+						</ul>
+					</section>
+					<section>
+						<h3>Cookies: ejemplos</h3>
+						<img src="images/cookie-set-header.png" width="100%"/>
+						<img src="images/cookie-header.png" width="100%"/>
+						<img src="images/cookies-js.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Web Storage</h3>
+						<ul>
+							<li>Cada Web Site tiene su propio Web Storage aislado, no podiendo acceder al de otros dominios</li>
+							<li>Almacenamiento de datos simplres: texto, númerico (objetos también pero con <code>JSON.stringify()</code>)</li>
+							<li>LocalStorage: almacenamiento persiste tras cerrar el navegador</li>
+							<li>SessionStorage: almacenamiento no persiste tras cerrar el navegador (sesión finaliza)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Web Storage</h3>
+						<p>
+						<ul>
+						<li>
+							Permiten almacenar entre 5MB y 10MB de información; incluyendo texto y multimedia.
+						</li>
+						<li>
+							La información está almacenada en la computadora del cliente y NO es enviada en cada petición del servidor, a diferencia de las cookies.
+						</li>
+						<li>
+							Utilizan un número mínimo de peticiones al servidor para reducir el tráfico de la red.
+						</li>
+						<li>
+							Previenen pérdidas de información cuando se desconecta de la red.
+						</li>
+						<li>
+							La información es guardada por domino web (incluye todas las páginas del dominio).
+						</li>
+						</ul>
+						</p>
+					</section>
+					<section>
+						<h3>Web Storage: ejemplo</h3>
+						<img src="images/web-storage.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Web Storage - Navegación Privada</h3>
+						<p>
+							La mayoría de los navegadores de hoy en día soportan una opción de privacidad llamada  'Modo incógnito', 'Navegación privada', o algo similar, que básicamente se asegura de que la sesión de navegación no deje rastros después de que el navegador se cierra.
+						</p>
+						<p>
+							La mayoría de los navegadores han optado por una estrategia donde las API de almacenamiento siguen disponibles y aparentemente completamente funcionales, con la única gran diferencia de que todos los datos almacenados son eliminados después de cerrar el navegador.
+						</p>
+					</section>
+					<section>
+						<h3>IndexedDB</h3>
+						<ul>
+							<li>Sistema de base de datos completo embebido en el navegador</li>
+							<li>Se utiliza para almacenar datos complejos y pesados como imágenes, vídeos...</li>
+							<li>Su uso no es trivial</li>
+						</ul>
+						<p>Ver ejemplo de clase y <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage">referencia</a></p>
+					</section>
+					<section>
+						<h3>IndexedDB</h3>
+						<ul>
+							<li>Interfaz disponible para almacenar los pares de objetos Request Response</li>
+							<li>Tantas cachés como queramos, por nombre</li>
+							<li>Tenemos que implementar la lógica a través de un <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache">ServiceWorker del navegador</a></li>
+						</ul>
+						<p>Ver ejemplo de clase y <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache">referencia</a></p>
+					</section>
+					<section>
+						<h2>HTML5 APIs</h2>
+						<p>En la especificación HTML5 se introducen <a href="https://developer.mozilla.org/es/docs/Web/API">numerosas APIs</a> de las cuales destacamos las más interesantes:</p>
+						<ul>
+							<li><a href="https://web.dev/drag-and-drop/">Drag and Drop</a></li>
+							<li>Geolocalización</li>
+							<li>Web Storage: Indexed DB & Local Storage</li>
+							<li>Web Workers: scripts en segundo plano</li>
+							<li><a href="https://github.com/dissimulate/Tearable-Cloth">Canvas</a></li>
+							<li>Bluetooth</li>
+							<li>Camera</li>
+						</ul>
+					</section>
+				</section>
+				<!--
+				https://developer.mozilla.org/en-US/docs/Learn/Forms
+				https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form
+				https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_structure_a_web_form
+				https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX
+				https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous
+				-->
+				<section>
+					<section>
+						<h2>Formularios Web</h2>
+						<ul>
+							<li>Estructura de un formulario web</li>
+							<li>Ajax</li>
+							<li>API Fetch</li>
+							<li>Await/Async</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Estructura de un formulario web</h2>
+						<ul>
+							<li><code>&lt;form&gt;</code>: es el bloque que define y agrega todos los elementos del formulario</li>
+							<li><code>&lt;fieldset&gt;</code> bloque que agrupa elementos del formulario con el mismo propósito</li>
+							<li><code>&lt;legend&gt;</code> da un siginificado a una agrupación &lt;fieldset&gt;</li>
+						</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Estructura de un formulario web</h2>
+						<ul>
+							<li><code>&lt;label&gt;</code> define una etiqueta para un control del formulario. Relación a través del atributo <code>for</code></li>
+							<li><code>&lt;input&gt;</code> controles del Formulario (inputs): text, password, email, date, checkbox, hidden...
+						</ul>
+					</section>
+					<section>
+						<h2>Ejemplo de formulario web básico</h2>
+						<img src="images/formulario-basico.png" width="100%" />
+					</section>
+					<section>
+						<h2>Validación de formularios</h2>
+						<p>
+							Antes de enviar datos al servidor, es importante asegurarse de que se completan todos los controles de formulario requeridos, y en el formato correcto. Esto se denomina validación de formulario en el lado del cliente y ayuda a garantizar que los datos que se envían coinciden con los requisitos establecidos en los diversos controles de formulario.
+						</p>
+					</section>
+					<section>
+						<h2>Validación de formularios</h2>
+						<p>
+							La validación en el lado del cliente es una verificación inicial y una característica importante para garantizar una buena experiencia de usuario; mediante la detección de datos no válidos en el lado del cliente, el usuario puede corregirlos de inmediato. Si el servidor lo recibe y, a continuación, lo rechaza; se produce un retraso considerable en la comunicación entre el servidor y el cliente que insta al usuario a corregir sus datos.
+						</p>
+					</section>
+					<section>
+						<h2>Validación de formularios</h2>
+						<p>
+							Sin embargo, <b>¡la validación en el lado del cliente no debe considerarse una medida de seguridad exhaustiva!</b> Las aplicaciones siempre deben realizar comprobaciones de seguridad de los datos enviados por el formulario en el lado del servidor, así como también en el lado del cliente, porque <b>la validación en el lado del cliente es demasiado fácil de evitar</b>, por lo que los usuarios malintencionados pueden enviar fácilmente datos incorrectos a tu servidor.
+						</p>
+					</section>
+					<section>
+						<h2>Validación de formularios - Premisas</h2>
+						<ul>
+							<li>Obtener los datos correctos en el formato correcto. Nuestras aplicaciones no funcionarán correctamente si los datos de nuestros usuarios se almacenan en el formato incorrecto.</li>
+							<li>Proteger los datos de nuestros usuarios. Obligar a nuestros usuarios a introducir contraseñas seguras facilita proteger la información de su cuenta.</li>
+							<li>Queremos protegernos a nosotros mismo. Hay muchas formas en que los usuarios maliciosos puedan usar mal los formularios desprotegidos.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tipos de validación de formularios</h2>
+						<ul>
+							<li>Validación HTML incorporada: mejor rendimiento, menos personalización.</li>
+							<li>Validación JavaScript: peor rendimiento, mayor personalización</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Validación HTML</h2>
+						<p>Atributos de validación</p>
+						<ul>
+							<li><code>required</code></li>
+							<li><code>minlength</code>, <code>maxlength</code></li>
+							<li><code>min</code>, <code>max</code></li>
+							<li><code>type</code></li>
+							<li><code>pattern</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ejemplo de validación HTML</h2>
+						<img src="images/form-validation-html.png" width="100%" />
+						<img src="images/form-validation-html-error.png" width="100%" />
+					</section>
+					<section>
+						<h2>Validación JavaScript</h2>
+						<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation">API de validación de restricciones</a></p>
+						<ul>
+							<li>Disponible para elementos: input, select, textarea, output, fieldset</li>
+							<li>Se utilizan los mismos atributos de validación: required, type, pattern...</li>
+							<li>Estos elementos obtienen los atributos <code>validity (ValidityState), validationMessage, willValidate</code></li>
+							<li>Permite utilizar los métodos <code>checkValidity()</code> y <code>setCustomValidity(string)</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ejemplo validación JavaScript</h2>
+						<img src="images/form-validation-js.png" width="100%" />
+					</section>
+					<section>
+						<h2>Envío de formularios</h2>
+						<ul>
+							<li>Destino del formulario (URL): atributo <code>action</code></li>
+							<li>Tipo de envío (método HTTP): atributo <code>method</code> con valor <code>GET / POST</code></li>
+							<li>Atributo <code>enctype</code> para enviar el contenido con diferente codificación, por ejemplo <code>multipart/form-data</code> para imágenes</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplo de formulario de login</h3>
+						<img src="images/form-action.png" width="100%" />
+					</section>
+					<section>
+						<h3>Ejemplo de formulario con imagen</h3>
+						<img src="images/form-multipart.png" width="100%" />
+					</section>
+					<section>
+						<h2>Envío de formulario con JavaScript</h2>
+						<p>Es posible enviar un formulario con JavaScript. Tan solo debemos hacer uso de la función JavaScript nativa <code>submit()</code> sobre el formulario</p>
+						<img src="images/submit-form-js.png" width="100%" />
+					</section>
+					<section>
+						<h2>Asynchronous JavaScript (AJAX)</h2>
+						<p>AJAX nos permite realizar llamadas HTTP con JavaScript de manera asíncrona (no bloqueante) en segundo plano, aunque también se puede usar de manera síncrona.</p>
+						<p>Se suele usar para recargar elementos del DOM que contienen datos de servidores externos, mandar y actualizar datos... </p>
+					</section>
+					
+					<section>
+						<h3>API Fetch</h3>
+						<p>
+							La API Fetch proporciona una interfaz JavaScript para acceder y manipular partes del canal HTTP, tales como peticiones y respuestas. También provee un método global fetch() que proporciona una forma fácil y lógica de obtener recursos de forma asíncrona por la red.
+						</p>
+					</section>
+					<section>
+						<h3>API Fetch</h3>
+						<p>
+							Este tipo de funcionalidad se conseguía previamente haciendo uso de XMLHttpRequest. Fetch proporciona una alternativa mejor que puede ser empleada fácilmente por otras tecnologías como Service Workers. Fetch también aporta un único lugar lógico en el que definir otros conceptos relacionados con HTTP como CORS y extensiones para HTTP.
+						</p>
+					</section>
+					<section>
+						<h3>API Fetch vs JQuery.ajax()</h3>
+						<p>
+							<ul>
+								<li>
+							El objeto Promise devuelto desde fetch() no será rechazado con un estado de error HTTP incluso si la respuesta es un error HTTP 404 o 500. En cambio, este se resolverá normalmente (con un estado ok configurado a false), y  este solo sera rechazado ante un fallo de red o si algo impidió completar la solicitud.
+								</li>
+								<li>
+							Por defecto, fetch no enviará ni recibirá cookies del servidor, para mandar cookiesdeberan ser configuradas.
+								</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h3>Función Fetch</h3>
+						<ul>
+							<li>Acepta dos parámetros: la URL del recurso y un objeto <code><a href="https://developer.mozilla.org/es/docs/Web/API/Request">Request</a></code> donde se indican: método HTTP, cabeceras HTTP, body...</li>
+							<li>Devuelve una <code>Promise</code> a la que podemos suscribirnos con <code>.then()</code> para procesar la respuesta en forma de objeto <code><a href="https://developer.mozilla.org/es/docs/Web/API/Response">Response</a></code></li>
+							<li>La respuesta se puede resolver para extraer el contenido utilizando el <code>mixin</code> del objeto <code><a href="https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch#body">Body</a></code> de la respuesta</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplo Fetch GET</h3>
+						<img src="images/fetch-api.png" width="100%" />
+					</section>
+					<section>
+						<h3>Ejemplo Fetch POST</h3>
+						<img src="images/fetch-api-post.png" width="100%" />
+					</section>
+					<section>
+						<h3>Ejemplo Fetch POST formulario multipart</h3>
+						<img src="images/fetch-api-multipart.png" width="100%" />
+					</section>
+					<section>
+						<h3>Async/Await</h3>
+						<p>
+							Async/Await es una propuesta para extender la sintaxis de javaScript con las palabras reservadas async y await, cuyo uso permite tratar las funciones que devuelven promesas en nuestro código como si fueran funciones síncronas que devuelven directamente valores en vez de promesas.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Referencias</h2>
+						<h3>Sesión 1:</h3>
+						<ul>
+							<li>https://www.ecma-international.org/publications/standards/Ecma-262.htm</li>
+							<li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide</li>
+							<li>https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/</li>
+							<li>https://eloquentjavascript.net/</li>
+							<li>https://js.do/</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Referencias</h2>
+						<h3>Sesión 2:</h3>
+						<ul style="font-size: 0.8em">
+							<li>https://jsfiddle.net/</li>
+							<li>https://developer.mozilla.org/es/docs/DOM</li>
+							<li>https://lenguajejs.com/javascript/dom/que-es/</li>
+							<li>https://developer.mozilla.org/es/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage</li>
+							<li>https://developer.mozilla.org/en-US/docs/Web/Events#standard_events</li>
+							<li>https://developer.mozilla.org/es/docs/Learn/HTML</li>
+							<li>https://www.digitallearning.es/blog/javascript-api-html5/</li>
+							<li>https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started</li>
+							<li>https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch</li>
+						</ul>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+			Reveal.configure(
+				{ showNotes: true },
+				{ showNotes: 'separate-page' },
+				{ pdfMaxPagesPerSlide: 1 }
+			);
+		</script>
+	</body>
+</html>
